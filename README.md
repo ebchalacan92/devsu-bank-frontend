@@ -1,59 +1,151 @@
-# DevsuBankFrontend
+# 🏦 Devsu Bank - Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.9.
+Este es el **frontend** de la aplicación **Devsu Bank**, desarrollado como parte del ejercicio práctico técnico.  
+Permite la gestión completa de **clientes**, **cuentas**, **movimientos**, y la **generación de reportes PDF** conectándose al backend en .NET.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Tecnologías utilizadas
 
-```bash
-ng serve
-```
+- **Angular 17+**
+- **TypeScript**
+- **Bootstrap 5**
+- **RxJS**
+- **Jest** (para pruebas unitarias)
+- **HTML / CSS / SCSS**
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## ⚙️ Requisitos previos
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Antes de ejecutar este proyecto, asegúrate de tener instalado:
 
-```bash
-ng generate component component-name
-```
+- [Node.js (v18 o superior)](https://nodejs.org/)
+- [Angular CLI](https://angular.io/cli)
+- Un backend funcional (ver: [Devsu Bank - Backend](https://github.com/ebchalacan92/devsu-bank-backend))
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## ▶️ Ejecución del proyecto
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### 1️⃣ Instalar dependencias
 
 ```bash
-ng test
+npm install
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+### 2️⃣ Ejecutar la aplicación
 
 ```bash
-ng e2e
+npm start
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Por defecto, se abrirá en:  
+👉 **http://localhost:4200**
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 🔧 Configuración de entorno
+
+Revisa o edita el archivo:  
+`src/environments/environment.ts`
+
+```typescript
+export const environment = {
+  production: false,
+  apiUrl: 'https://localhost:5001/api'
+};
+```
+
+Si el backend se ejecuta en otro puerto o dominio, actualiza la propiedad `apiUrl` con la URL correspondiente.
+
+---
+
+## 🧩 Estructura del proyecto
+
+```
+src/
+ ├── app/
+ │   ├── clients/           → CRUD de clientes
+ │   ├── accounts/          → CRUD de cuentas
+ │   ├── movements/         → Registro y validaciones de movimientos
+ │   ├── reports/           → Generación y descarga de reportes PDF
+ │   ├── services/          → Conexión con el backend (.NET API)
+ │   ├── navbar/            → Barra de navegación principal
+ │   └── app.routes.ts      → Rutas principales del proyecto
+ │
+ ├── assets/                → Recursos estáticos (logos, íconos, etc.)
+ ├── environments/          → Configuración de entornos
+ ├── main.ts                → Punto de entrada de Angular
+ └── styles.css             → Estilos globales
+```
+
+---
+
+## 🧪 Pruebas unitarias
+
+Este proyecto está configurado con **Jest**.
+
+Ejecuta los tests con:
+
+```bash
+npm test
+```
+
+> En caso de estar configurado con Karma (Angular default):
+> ```bash
+> ng test
+> ```
+
+---
+
+## ✨ Funcionalidades principales
+
+✅ CRUD de clientes (crear, editar, eliminar, buscar)  
+✅ CRUD de cuentas bancarias (asociadas a clientes)  
+✅ Registro de movimientos con validaciones de negocio (saldo y límites diarios)  
+✅ Generación y descarga de reportes PDF  
+✅ Interfaz intuitiva con **Bootstrap 5**  
+✅ Integración directa con el backend .NET  
+
+---
+
+## 📄 Estructura de navegación
+
+| Módulo | Ruta | Descripción |
+|--------|------|-------------|
+| Clientes | `/clientes` | Gestión de clientes |
+| Cuentas | `/cuentas` | Gestión de cuentas |
+| Movimientos | `/movimientos` | Registro de depósitos y retiros |
+| Reportes | `/reportes` | Generación de reportes PDF |
+
+---
+
+## 🧠 Buenas prácticas aplicadas
+
+- Uso de **servicios Angular** centralizados (`/services`)  
+- Separación por módulos (clientes, cuentas, movimientos, reportes)  
+- **Reactive Forms** para validaciones y control de formularios  
+- Manejo de errores de backend con alertas en el frontend  
+- Código estandarizado con Prettier  
+- Diseño responsivo con Bootstrap  
+
+---
+
+## 👨‍💻 Autor
+
+**Edwin Chalacan**  
+📧 [edwin.chalacan@outlook.com](mailto:edwin.chalacan@outlook.com)  
+🔗 [GitHub: ebchalacan92](https://github.com/ebchalacan92)
+
+---
+
+## 🧱 Repos relacionados
+
+- 🔹 **Backend (.NET 8)** → [Devsu Bank - Backend](https://github.com/ebchalacan92/devsu-bank-backend)
+- 🔹 **Frontend (Angular)** → [Devsu Bank - Frontend](https://github.com/ebchalacan92/devsu-bank-frontend)
+
+---
+
+> 💡 Si deseas ejecutar ambos proyectos juntos, asegúrate de tener el backend corriendo en `https://localhost:5001`  
+> antes de iniciar el frontend.

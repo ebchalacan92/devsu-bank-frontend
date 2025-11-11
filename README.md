@@ -1,4 +1,4 @@
-# 🏦 Devsu Bank - Frontend
+# Devsu Bank - Frontend
 
 Este es el **frontend** de la aplicación **Devsu Bank**, desarrollado como parte del ejercicio práctico técnico.  
 Permite la gestión completa de **clientes**, **cuentas**, **movimientos**, y la **generación de reportes PDF** conectándose al backend en .NET.

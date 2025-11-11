@@ -5,9 +5,9 @@ Permite la gestión completa de **clientes**, **cuentas**, **movimientos**, y la
 
 ---
 
-## 🚀 Tecnologías utilizadas
+## Tecnologías utilizadas
 
-- **Angular 17+**
+- **Angular 20+**
 - **TypeScript**
 - **Bootstrap 5**
 - **RxJS**
@@ -16,28 +16,29 @@ Permite la gestión completa de **clientes**, **cuentas**, **movimientos**, y la
 
 ---
 
-## ⚙️ Requisitos previos
+## Requisitos previos
 
 Antes de ejecutar este proyecto, asegúrate de tener instalado:
 
-- [Node.js (v18 o superior)](https://nodejs.org/)
+- [Node.js (v22)](https://nodejs.org/)
 - [Angular CLI](https://angular.io/cli)
 - Un backend funcional (ver: [Devsu Bank - Backend](https://github.com/ebchalacan92/devsu-bank-backend))
 
 ---
 
-## ▶️ Ejecución del proyecto
+## Ejecución del proyecto
 
-### 1️⃣ Instalar dependencias
+###  Instalar dependencias
 
 ```bash
 npm install
 ```
 
-### 2️⃣ Ejecutar la aplicación
+### Ejecutar la aplicación
 
 ```bash
 npm start
+ng serve -o
 ```
 
 Por defecto, se abrirá en:  
@@ -45,12 +46,12 @@ Por defecto, se abrirá en:
 
 ---
 
-## 🔧 Configuración de entorno
+## Configuración de entorno
 
-Revisa o edita el archivo:  
+Revisa o edita el archivo ya sea que levantes localmente o en docker  
 `src/environments/environment.ts`
 
-```typescript
+```typescript 
 export const environment = {
   production: false,
   apiUrl: 'https://localhost:5001/api'
@@ -61,7 +62,7 @@ Si el backend se ejecuta en otro puerto o dominio, actualiza la propiedad `apiUr
 
 ---
 
-## 🧩 Estructura del proyecto
+## Estructura del proyecto
 
 ```
 src/
@@ -82,7 +83,7 @@ src/
 
 ---
 
-## 🧪 Pruebas unitarias
+## Pruebas unitarias
 
 Este proyecto está configurado con **Jest**.
 
@@ -99,18 +100,18 @@ npm test
 
 ---
 
-## ✨ Funcionalidades principales
+## Funcionalidades principales
 
-✅ CRUD de clientes (crear, editar, eliminar, buscar)  
-✅ CRUD de cuentas bancarias (asociadas a clientes)  
-✅ Registro de movimientos con validaciones de negocio (saldo y límites diarios)  
-✅ Generación y descarga de reportes PDF  
-✅ Interfaz intuitiva con **Bootstrap 5**  
-✅ Integración directa con el backend .NET  
+ CRUD de clientes (crear, editar, eliminar, buscar)  
+ CRUD de cuentas bancarias (asociadas a clientes)  
+ Registro de movimientos con validaciones de negocio (saldo y límites diarios)  
+ Generación y descarga de reportes PDF  
+ Interfaz intuitiva con **Bootstrap 5**  
+ Integración directa con el backend .NET  
 
 ---
 
-## 📄 Estructura de navegación
+## Estructura de navegación
 
 | Módulo | Ruta | Descripción |
 |--------|------|-------------|
@@ -121,7 +122,7 @@ npm test
 
 ---
 
-## 🧠 Buenas prácticas aplicadas
+## Buenas prácticas aplicadas
 
 - Uso de **servicios Angular** centralizados (`/services`)  
 - Separación por módulos (clientes, cuentas, movimientos, reportes)  
@@ -132,18 +133,14 @@ npm test
 
 ---
 
-## 👨‍💻 Autor
+## Autor
 
 **Edwin Chalacan**  
-📧 [edwin.chalacan@outlook.com](mailto:edwin.chalacan@outlook.com)  
-🔗 [GitHub: ebchalacan92](https://github.com/ebchalacan92)
-
 ---
 
-## 🧱 Repos relacionados
+## Repos relacionados
 
-- 🔹 **Backend (.NET 8)** → [Devsu Bank - Backend](https://github.com/ebchalacan92/devsu-bank-backend)
-- 🔹 **Frontend (Angular)** → [Devsu Bank - Frontend](https://github.com/ebchalacan92/devsu-bank-frontend)
+- 🔹 **Backend (.NET 8)** → [Devsu Bank - Backend](https://github.com/ebchalacan92/devsu-bank-fullstack)
 
 ---
 

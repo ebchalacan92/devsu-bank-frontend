@@ -1,0 +1,52 @@
+<div class="container mt-4">
+  <h2>{{ isEditMode ? 'Editar Cuenta' : 'Nueva Cuenta' }}</h2>
+
+  <form [formGroup]="accountForm" (ngSubmit)="onSubmit()">
+
+    <div class="mb-3">
+      <label class="form-label">Número de Cuenta</label>
+      <input type="text" class="form-control" formControlName="accountNumber" />
+      <small *ngIf="isInvalid('accountNumber')" class="text-danger">
+        El número de cuenta es obligatorio.
+      </small>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Tipo de Cuenta</label>
+      <select class="form-select" formControlName="accountType">
+        <option value="Savings">Ahorros</option>
+        <option value="Checking">Corriente</option>
+      </select>
+      <small *ngIf="isInvalid('accountType')" class="text-danger">
+        Debe seleccionar un tipo de cuenta.
+      </small>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Saldo Inicial</label>
+      <input type="number" class="form-control" formControlName="initialBalance" />
+      <small *ngIf="isInvalid('initialBalance')" class="text-danger">
+        El saldo inicial es obligatorio y no puede ser negativo.
+      </small>
+    </div>
+
+    <div class="form-check mb-3">
+      <input type="checkbox" class="form-check-input" formControlName="status" />
+      <label class="form-check-label">Activo</label>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Cliente</label>
+      <select class="form-select" formControlName="clientId">
+        <option [ngValue]="null" disabled>Seleccione un cliente</option>
+        <option *ngFor="let c of clients" [value]="c.clientId">{{ c.name }}</option>
+      </select>
+      <small *ngIf="isInvalid('clientId')" class="text-danger">
+        Debe seleccionar un cliente.
+      </small>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="accountForm.invalid">Guardar</button>
+    <button type="button" class="btn btn-secondary ms-2" (click)="goBack()">Cancelar</button>
+  </form>
+</div>

@@ -1,0 +1,37 @@
+<div class="container mt-4">
+  <h2>{{ isEditMode ? 'Editar Cliente' : 'Nuevo Cliente' }}</h2>
+
+  <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label class="form-label">Nombre</label>
+      <input type="text" class="form-control" formControlName="name" />
+      <small *ngIf="isInvalid('name')" class="text-danger">El nombre es obligatorio.</small>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Dirección</label>
+      <input type="text" class="form-control" formControlName="address" />
+      <small *ngIf="isInvalid('address')" class="text-danger">La dirección es obligatoria.</small>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Teléfono</label>
+      <input type="text" class="form-control" formControlName="phone" />
+      <small *ngIf="isInvalid('phone')" class="text-danger">El teléfono es obligatorio.</small>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Contraseña</label>
+      <input type="password" class="form-control" formControlName="password" />
+      <small *ngIf="isInvalid('password')" class="text-danger">La contraseña es obligatoria.</small>
+    </div>
+
+    <div class="form-check mb-3">
+      <input type="checkbox" class="form-check-input" formControlName="status" />
+      <label class="form-check-label">Activo</label>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="clientForm.invalid">Guardar</button>
+    <button type="button" class="btn btn-secondary ms-2" (click)="router.navigate(['/clientes'])">Cancelar</button>
+  </form>
+</div>

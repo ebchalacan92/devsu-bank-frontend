@@ -1,0 +1,37 @@
+<div class="container mt-4">
+  <h2>Nuevo Movimiento</h2>
+
+  <form [formGroup]="movementForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label class="form-label">Fecha</label>
+      <input type="date" class="form-control" formControlName="date" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Tipo de Movimiento</label>
+      <select class="form-select" formControlName="movementType">
+        <option value="Deposit">Deposito</option>
+        <option value="Withdrawal">Retiro</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Valor</label>
+      <input type="number" class="form-control" formControlName="value" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Cuenta</label>
+      <select class="form-select" formControlName="accountNumber">
+        <option [ngValue]="null" disabled>Seleccione una cuenta</option>
+        <option *ngFor="let a of accounts" [value]="a.accountNumber">
+          {{ a.accountNumber }} ({{ a.accountType === 'Savings' ? 'Ahorros' : 'Corriente' }})
+        </option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-success">Registrar</button>
+    <button type="button" class="btn btn-secondary ms-2" (click)="goBack()">Cancelar</button>
+  </form>
+</div>
+    

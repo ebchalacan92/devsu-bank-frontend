@@ -42,7 +42,7 @@ ng serve -o
 ```
 
 Por defecto, se abrirá en:  
-👉 **http://localhost:4200**
+**http://localhost:4200**
 
 ---
 
@@ -140,7 +140,7 @@ npm test
 
 ## Repos relacionados
 
-- 🔹 **Backend (.NET 8)** → [Devsu Bank - Backend](https://github.com/ebchalacan92/devsu-bank-fullstack)
+- **Backend (.NET 8)** → [Devsu Bank - Backend](https://github.com/ebchalacan92/devsu-bank-fullstack)
 
 ---
 
